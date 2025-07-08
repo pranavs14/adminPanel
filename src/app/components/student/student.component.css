@@ -1,0 +1,27 @@
+.add-student{
+    width: 80%;
+    border: 1px solid #b0e0e6;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+}
+
+.edit-student{
+    border: 1px solid #00fb15;
+    width: 80%;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #eaf7ec;
+}
+
+.student-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-class{
+    max-height: 400px;
+    overflow-y: auto;
+}

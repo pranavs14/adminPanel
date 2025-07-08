@@ -1,0 +1,32 @@
+<div class="container p-3 center d-flex justify-content-center align-items-center">
+    <div [ngClass]="[editUser ? 'row edit-user' : 'row add-user']">
+        <h1>{{editUser ? 'Edit User' : 'Add User'}}</h1> 
+        <form action="" class="user-form" [formGroup]="userForm" (ngSubmit)="addUser()" autocomplete="off">
+            <div class="form-field-custom">
+                <mat-form-field appearance="outline" class="user-field">
+                    <mat-label>User ID</mat-label>
+                    <input matInput formControlName="id">
+                    <mat-error *ngIf="userForm.get('id')?.hasError('required')">
+                        User ID is required* 
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="user-field">
+                    <mat-label>User Name</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="userForm.get('name')?.hasError('required')">
+                        User Name is required*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button class="" [ngClass]="[editUser ? 'edit-btn btn btn-primary' : 'btn btn-primary add-btn']" type="submit">{{editUser ? 'Update User' : 'Add User'}}</button>
+        </form>
+    </div>
+</div>
+<hr>
+<div>
+    <app-table [displayedColumns]="['UserID', 'UserName', 'actions']"
+    [rowData]="userData"
+    (edit)="handleEdit($event)"
+    (delete)="handleDelete($event)"></app-table>
+</div>
+  

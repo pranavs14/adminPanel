@@ -1,0 +1,32 @@
+<div class="container p-3 center d-flex justify-content-center align-items-center">
+    <div [ngClass]="[editCustomer ? 'row edit-customer' : 'row add-customer']">
+        <h1>{{editCustomer ? 'Edit Customer' : 'Add Customer'}}</h1> 
+        <form action="" class="customer-form" [formGroup]="customerForm" (ngSubmit)="addCustomer()" autocomplete="off">
+            <div class="form-field-custom">
+                <mat-form-field appearance="outline" class="customer-field">
+                    <mat-label>Customer ID</mat-label>
+                    <input matInput formControlName="id">
+                    <mat-error *ngIf="customerForm.get('id')?.hasError('required')">
+                        Customer ID is required* 
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="customer-field">
+                    <mat-label>Customer Name</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="customerForm.get('name')?.hasError('required')">
+                        Customer Name is required*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button class="" [ngClass]="[editCustomer ? 'edit-btn btn btn-primary' : 'btn btn-primary add-btn']" type="submit">{{editCustomer ? 'Update Customer' : 'Add Customer'}}</button>
+        </form>
+    </div>
+</div>
+<hr>
+<div>
+    <app-table [displayedColumns]="['CustomerID', 'CustomerName', 'actions']"
+    [rowData]="customerData"
+    (edit)="handleEdit($event)"
+    (delete)="handleDelete($event)"></app-table>
+</div>
+  

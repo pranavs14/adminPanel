@@ -1,27 +1,59 @@
-# MicroSenseProject
+# 🧩 Angular Admin Panel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+A responsive admin panel built with Angular and Angular Material, featuring login authentication, CRUD operations, and a reusable material table component.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📌 Features
 
-## Code scaffolding
+### 🔐 Login
+- Reactive form with validation
+- Mock login using dummy credentials
+- Redirects to dashboard upon success
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 📊 Dashboard
+- Shows total counts of Customers, Users, and Students
+- Chart.js integration for visual analytics
 
-## Build
+### 📁 Admin Layout
+- Sidebar navigation: Dashboard, Customer, User, Student
+- Logout button in header
+- Guarded routes using AuthGuard
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 📦 Reusable Material Table
+- Inputs: `columns`, `data`
+- Outputs: `edit`, `delete` events
+- Includes sorting, filtering, and pagination
 
-## Running unit tests
+### 📝 CRUD Pages
+- Add, Edit, Delete records for:
+  - Customers
+  - Users
+  - Students
+- Data managed through shared Angular Service
+- Stored in `localStorage`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠 Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Angular 16+
+- Angular Material
+- Chart.js
+- Bootstrap (optional)
+- localStorage (for simulating backend)
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🚀 How to Run
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/angular-admin-panel.git
+cd angular-admin-panel
+
+# Install dependencies
+npm install
+
+# Run the app
+ng serve --open
